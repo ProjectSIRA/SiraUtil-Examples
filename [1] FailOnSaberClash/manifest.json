@@ -2,11 +2,12 @@
   "$schema": "https://raw.githubusercontent.com/bsmg/BSIPA-MetadataFileSchema/master/Schema.json",
   "id": "FailOnSaberClash",
   "name": "FailOnSaberClash",
-  "author": "auros",
-  "version": "3.0.0",
-  "description": "",
-  "gameVersion": "1.18.1",
+  "author": "SIRA",
+  "version": "1.0.0",
+  "description": "Fails the level when the sabers touch.",
+  "gameVersion": "1.18.2",
   "dependsOn": {
-    "BSIPA": "^4.2.0"
+    "BSIPA": "^4.2.0",
+    "SiraUtil": "^3.0.0"
   }
 }

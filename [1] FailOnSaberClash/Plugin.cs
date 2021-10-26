@@ -1,7 +1,6 @@
 ﻿using FailOnSaberClash.Installers;
 using IPA;
 using SiraUtil.Zenject;
-using IPALogger = IPA.Logging.Logger;
 
 namespace FailOnSaberClash
 {
@@ -9,10 +8,11 @@ namespace FailOnSaberClash
     public class Plugin
     {
         [Init]
-        public Plugin(IPALogger logger, Zenjector zenjector)
+        public Plugin(Zenjector zenjector)
         {
-            zenjector.UseLogger(logger);
-            zenjector.Install<FailOnSaberClashCoreInstaller>(Location.App);
+            // We will install it into the Standard Player (Solo and Party mode).
+            // We don't want to touch campaigns, multiplayer, or the tutorial.
+            zenjector.Install<FailPlayerInstaller>(Location.StandardPlayer);
         }
     }
 }
